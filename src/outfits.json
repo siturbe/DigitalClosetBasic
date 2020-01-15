@@ -1,0 +1,64 @@
+{
+  "outfit1": {
+    "name": "Outfit 1",
+    "id": "1",
+    "top": "top_id",
+    "bottom": "bottom_id",
+    "photos": {
+      "0": "./images/articles/article1.jpg", 
+      "1": "./images/articles/article2.jpg", 
+      "2": "./images/articles/article3.jpg"},
+    "events": {
+      "0": {
+        "name": "Party 1",
+        "location": "There",
+        "date": "Now",
+        "attendees":{
+          "0": "Jim",
+          "1": "Dewight"
+        }
+      },
+      "1": {
+        "name": "Party 2",
+        "location": "Here",
+        "date": "Then",
+        "attendees":{
+          "0": "Andy",
+          "1": "Kevin"
+        }
+      }
+    }
+  },
+  "outfit2": {
+    "name": "Outfit 2",
+    "id": "2",
+    "top": "top_id",
+    "bottom": "bottom_id",
+    "photos": {
+      "0": "./images/articles/article1.jpg", 
+      "1": "./images/articles/article2.jpg", 
+      "2": "./images/articles/article3.jpg"},
+    "events": {
+      "0": {
+        "name": "party 3",
+        "location": "Over There",
+        "date": "Right Now",
+        "attendees":{
+          "0": "Micheal",
+          "1": "Stanley"
+        }
+      },
+      "1": {
+        "name": "party 2",
+        "location": "Over Here",
+        "date": " Right Then",
+        "attendees":{
+          "0": "Pam",
+          "1": "Angela"
+        }
+      }
+      
+    }
+    
+  }
+}

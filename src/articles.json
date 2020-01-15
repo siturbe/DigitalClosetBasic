@@ -1,0 +1,13 @@
+{
+  "article1": {
+    "name": "Blue Polo",
+    "id": "1",
+    "type": "top",
+    "image": "./images/articles/article1.jpg",
+    "keywords": {
+      "0": "blue", 
+      "1": "polo", 
+      "2": "dress"},
+    "goesWith": ["black", "dress"]
+  }
+  }

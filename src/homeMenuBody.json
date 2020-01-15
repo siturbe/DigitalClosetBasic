@@ -1,0 +1,21 @@
+{
+  "myCloset": {
+    "para": "View your closet and save outfit",
+    "img": "./images/myCloset.jpg",
+    "title": "Go to Closet",
+    "link": "/closetPage"
+  },
+  "myOutfits": {
+    "para": "View save outfit aswell as photos and events",
+    "img": "./images/myOutfits.jpg",
+    "title": "Go to Outfits",
+    "link": "/outfitPage"
+
+  },
+  "myArticles": {
+    "para": "Add articles of clothing into you closet. You can also edit articles here",
+    "img": "./images/myArticles.jpeg",
+    "title": "Go to Articles",
+    "link": "/articlePage"
+  }
+}
