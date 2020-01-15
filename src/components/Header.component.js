@@ -7,8 +7,10 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useAuth0 } from '../contexts/auth0-context';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem'
 
-
+// Comment marks where tarted making functional changes
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -29,40 +31,72 @@ export default function Header() {
     <div className={classes.root}>
     <AppBar position="static" className="purple" maxWidth="100%">
       <Toolbar>
-        {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton> */}
+        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <SimpleMenu />
+        </IconButton>
         <Typography variant="h4" className={classes.title}>
           Digitial Closet
         </Typography>
         {/* <Button color="inherit">Login</Button> */}
-        <div className="navbar-end">
-              {/* if there is no user. show the login Button */}
-              {!isLoading && !user && (
-                <>
-                <Button className="navbar-item" href="/">Home</Button>
-                <Button onClick={loginWithRedirect} className="navbar-item">
-                  Login
-                </Button>
-                </>
-              )}
-              {/* if there is a user. show user name and logout Button */}
-              {!isLoading && user && (
-                <>
-                  <Button className="navbar-item" href="/">Home</Button>
-                  <Button className="navbar-item">{user.name}</Button>
-                  <Button
-                    onClick={() => logout({ returnTo: window.location.origin })}
-                    className="navbar-item"
-                  >
-                    Logout
-                  </Button>
-                </>
-              )}
-            </div>
+
       </Toolbar>
     </AppBar>
   </div>
   );
 }
 
+//AFter made changes but not tested - working spot
+
+function SimpleMenu(){
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const { isLoading, user, loginWithRedirect, logout } = useAuth0();
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleHome = () => {
+    // setAnchorEl(null);
+    window.location.href="/";
+  };
+
+  const handleLogout = () => {
+    logout();
+    window.location.herf="/";
+  }
+
+  return (
+    <div>
+      <Button className="purple" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+        <MenuIcon />
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        {!isLoading && !user && (
+          <>
+        <MenuItem href="/" onClick={handleHome}>Home</MenuItem>
+        <MenuItem onClick={loginWithRedirect}>Login</MenuItem>
+        </>
+        )}
+        {!isLoading && user && (
+          <>
+        <MenuItem onClick={handleHome} >Home</MenuItem>
+        <MenuItem onClick={handleClose}>{user.name}</MenuItem>
+        <MenuItem 
+          onClick={handleLogout}
+          >Logout</MenuItem>
+        </>
+        )}
+      </Menu>
+    </div>
+  );
+}

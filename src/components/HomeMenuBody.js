@@ -2,6 +2,8 @@ import React from 'react';
 import HomeBtn from './HomeBtn';
 import Card from './HomeMenuCard';
 import { Paper } from '@material-ui/core';
+import { useAuth0 } from '../contexts/auth0-context';
+
 
 function HomeMenuBody(props) {
   const styles = {
@@ -26,7 +28,11 @@ function HomeMenuBody(props) {
   }
 
   const { img, title, link } = props
- 
+  const { isLoading, user, loginWithRedirect, logout } = useAuth0();
+
+  const handleNoUser = () => {
+    alert("Please login to continue to your closet")
+  }
    
 
   return (
@@ -35,8 +41,12 @@ function HomeMenuBody(props) {
       <div style={styles.picBtn}> 
         <Card img={img} alt={title} />
 
-        {/* <img src={img} alt={title} style={styles.Image} /> */}
+        {!isLoading && !user && (
+        <button className="btn btn-primary purple" onClick={loginWithRedirect}>Please Login to Your Close</button>
+        )}
+        {!isLoading && user && (
         <HomeBtn title={title} className="btn" link={link} />
+        )}
       </div>
       
       

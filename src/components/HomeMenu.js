@@ -7,7 +7,8 @@ import{
   Switch,
 } from "react-router-dom";
 import HomeMenuBody from './HomeMenuBody';
-import homeMenuInfo from '../homeMenuBody.json'
+import homeMenuInfo from '../homeMenuBody.json';
+import { useAuth0 } from '../contexts/auth0-context';
 
 
 import React from 'react';
@@ -36,6 +37,7 @@ const useStyles = makeStyles(theme => ({
 export default function ControlledExpansionPanels() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const { isLoading, user, loginWithRedirect, logout } = useAuth0();
 
   const handleChange = panel => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
