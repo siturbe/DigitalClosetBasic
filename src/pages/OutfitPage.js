@@ -1,10 +1,11 @@
 import React from "react";
 import HomeBtn from "../components/HomeBtn";
 import EventListItem from "../components/EventListItem";
-import { outfit1 } from "../outfits.json";
+import Partners from "../brands.json";
+import "../components/Brands.css"
 
 
-class ArticlePage extends React.Component {
+class PartnerPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,41 +16,27 @@ class ArticlePage extends React.Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col s8">
-              <h1>Current Outfit</h1>
-              <div className="row">
-                <div className="col s12">
-                  <h3>Top</h3>
-                  <img class="materialboxed" width="auto" src="./images/articles/article1.jpg"></img>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col s12">
-                  <h3>Bottom</h3>
-                  <img class="materialboxed" width="auto" src="./images/articles/article4.jpg"></img>
-                </div>
-              </div>
-            </div>
-            <div className="col s4">
-              <div className="row">
-                <div className="col s12">
-                  <h2>Photo collections</h2>
-                  <img class="materialboxed" width="auto" src="./images/mensClothing.jpg"></img>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col s12">
-                  <h2>Event collections</h2> {/*may be a modal for the events to show notable attendeess on collection link click*/}
-                  <div className="collection">
-                    {" "}
-                    {/**refactor collection into EventCollection */}
-                    {Object.values(outfit1.events).map(event => {
-                      return <EventListItem name={event.name} location={event.location} date={event.date} />;
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <section className="col s12">
+              <a href={Partners.rentTheRunway.link} target="_blank"><img src={Partners.rentTheRunway.image} alt="Rent The Runway" className="brandLink"/></a>
+            </section>
+            <section className="col s12">
+              <a href={Partners.jCrew.link} target="_blank"><img src={Partners.jCrew.image} alt="J. Crew" className="brandLink"/></a>
+            </section>
+            <section className="col s12">
+              <a href={Partners.macys.link} target="_blank"><img src={Partners.macys.image} alt="Macy's" className="brandLink"/></a>
+            </section>
+            <section className="col s12">
+              <a href={Partners.uniqlo.link} target="_blank"><img src={Partners.uniqlo.image} alt="uniqlo" className="brandLink"/></a>
+            </section>
+            <section className="col s12">
+              <a href={Partners.amazon.link} target="_blank"><img src={Partners.amazon.image} alt="Amazon" className="brandLink"/></a>
+            </section>
+            <section className="col s12">
+              <a href={Partners.bananaRepublic.link} target="_blank"><img src={Partners.bananaRepublic.image} alt="Banana republic" className="brandLink"/></a>
+            </section>
+            <section className="col s12">
+              <a href={Partners.luluLemon.link} target="_blank"><img src={Partners.luluLemon.image} alt="LuluLemon" className="brandLink"/></a>
+            </section>
           </div>
         </div>
       </div>
@@ -57,4 +44,4 @@ class ArticlePage extends React.Component {
   }
 }
 
-export default ArticlePage;
+export default PartnerPage;

@@ -42,7 +42,7 @@ function HomeMenuBody(props) {
         <Card img={img} alt={title} />
 
         {!isLoading && !user && (
-        <button className="btn btn-primary purple" onClick={loginWithRedirect}>Please Login to Your Close</button>
+        <button className="btn btn-primary purple" onClick={loginWithRedirect}>Please Login to Your Closet</button>
         )}
         {!isLoading && user && (
         <HomeBtn title={title} className="btn" link={link} />

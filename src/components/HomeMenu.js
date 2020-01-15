@@ -70,7 +70,7 @@ export default function ControlledExpansionPanels() {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography className={classes.heading}>My Outfits</Typography>
+          <Typography className={classes.heading}>Go Shopping</Typography>
           <Typography className={classes.secondaryHeading}>
             {homeMenuInfo.myOutfits.para}
           </Typography>
@@ -89,21 +89,21 @@ export default function ControlledExpansionPanels() {
  
       
       
-      <ExpansionPanel expanded={expanded === 'panel3'} >
+      {/* <ExpansionPanel expanded={expanded === 'panel3'} >
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography className={classes.heading}><Link to="/auth">Account</Link></Typography>
-          <Typography className={classes.secondaryHeading}>
-            Login/Logout
-          </Typography>
+          
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          
+          <Typography className={classes.heading}><Link to="/auth">Account</Link></Typography>
+            <Typography className={classes.secondaryHeading}>
+              Login/Logout
+            </Typography>
         </ExpansionPanelDetails>
-      </ExpansionPanel>
+      </ExpansionPanel> */}
       
     </div>
   );

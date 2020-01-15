@@ -59,7 +59,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function TextMobileStepper() {
 
-
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -97,6 +96,7 @@ export default function TextMobileStepper() {
         }
         console.log(tutorialSteps1);
         maxSteps = tutorialSteps1.length;
+    
         setActiveStep(1);
         setActiveStep(0);
         
@@ -105,6 +105,10 @@ export default function TextMobileStepper() {
       })    
   }
 
+  const handleShopping = () => {
+    // setAnchorEl(null);
+    window.location.href="/outfitPage";
+  };
   
 
 
@@ -142,6 +146,7 @@ export default function TextMobileStepper() {
           </Button>
         }
       />
+      <button className="btn btn-primary purple" onClick={handleShopping}>Let's Go Shopping!</button>
     </div>
   );
   

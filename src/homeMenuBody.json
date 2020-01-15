@@ -6,9 +6,9 @@
     "link": "/closetPage"
   },
   "myOutfits": {
-    "para": "View save outfit aswell as photos and events",
-    "img": "./images/myOutfits.jpg",
-    "title": "Go to Outfits",
+    "para": "Your favorite brands at a discount",
+    "img": "./images/shopping.jpg",
+    "title": "Go Shopping",
     "link": "/outfitPage"
 
   },
