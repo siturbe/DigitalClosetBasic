@@ -32,18 +32,18 @@ let tutorialSteps1 = [
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 600,
-    flexGrow: 1
+    maxWidth: 380,
+    flexGrow: 1,
+    alignContent: "center"
   },
   header: {
     display: "flex",
     alignItems: "center",
-    height: 50,
+    height: 40,
     paddingLeft: theme.spacing(4),
     backgroundColor: theme.palette.background.default
   },
   img: {
-    overflow: "hidden",
     display: "block",
     width: "100%"
   },
@@ -112,18 +112,18 @@ export default function TextMobileStepper() {
 
   return (
     <div className={classes.root}>
-      <Paper>
         <Tabs>
           {/* <Typography className={classes.title}>Your Tops</Typography> */}
           <Dialog></Dialog>
-          <button className="btn btn-primary purple" color="inherit" onClick={pullTops}>Your Tops</button>
+          <button className="btn btn-primary purple" color="inherit" onClick={pullTops}>Pull Your Tops</button>
           <DialogOutput></DialogOutput>
+        </Tabs>
+      <img className={classes.img} src={tutorialSteps1[activeStep].imgPath} alt={tutorialSteps1[activeStep].label} />
+        <Tabs>
           <DialogAddDate></DialogAddDate>
           <DialogAddEvent></DialogAddEvent>
           <DialogAddPeople></DialogAddPeople>
         </Tabs>
-      </Paper>
-      <img className={classes.img} src={tutorialSteps1[activeStep].imgPath} alt={tutorialSteps1[activeStep].label} />
       <MobileStepper
         steps={maxSteps}
         position="static"

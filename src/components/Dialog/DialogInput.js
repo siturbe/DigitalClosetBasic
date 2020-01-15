@@ -88,7 +88,7 @@ export default function SimpleDialogDemo() {
       {/* <Typography variant="subtitle1">Selected: {selectedValue}</Typography>
       <br /> */}
       <button  className="btn btn-primary purple" color="inherit" onClick={handleClickOpen}>
-        New Item
+        Add New Item
       </button>
       <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
     </div>

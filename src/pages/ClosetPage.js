@@ -45,9 +45,9 @@ export default function ClosetPage() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} justify="center">
           
-        <Grid item xs={12} style={style.paper} >
+        <Grid item xs={12} style={style.paper} justify="center" >
           <Tabs>
             <TextMobileStepper />
           </Tabs>
