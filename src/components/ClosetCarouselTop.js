@@ -97,6 +97,8 @@ export default function TextMobileStepper() {
         }
         console.log(tutorialSteps1);
         maxSteps = tutorialSteps1.length;
+        setActiveStep(1);
+        setActiveStep(0);
         
       }).catch(function (error) {
           console.log(error);

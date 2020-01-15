@@ -9,11 +9,19 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
-import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 import Typography from '@material-ui/core/Typography';
 import { blue } from '@material-ui/core/colors';
 import axios from "axios";
+
+import PersonIcon from '@material-ui/icons/Person';
+import PictureIcon from '@material-ui/icons/Photo';
+import BrandIcon from '@material-ui/icons/BrandingWatermark';
+import ColorIcon from '@material-ui/icons/ColorLensRounded';
+import CalendarIcon from '@material-ui/icons/CalendarToday';
+import ShirtIcon from '@material-ui/icons/ShoppingBasket';
+import EventIcon from '@material-ui/icons/EmojiFoodBeverage';
+import LabelIcon from '@material-ui/icons/Label';
 
 //Starting to modify this file from here
 
@@ -48,10 +56,41 @@ function SimpleDialog(props) {
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
       {/* <DialogTitle id="simple-dialog-title">Input Item Info</DialogTitle> */}
       <List>
-          <ListItem><ListItemText primary={label}/></ListItem>
-          <ListItem><ListItemText primary={seenBy}/></ListItem>
-          <ListItem><ListItemText primary={events}/></ListItem>
-          <ListItem><ListItemText primary={dateWorn}/></ListItem>
+          <ListItem>
+              <ListItemAvatar>
+                <Avatar className={classes.avatar}>
+                  <LabelIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary={label}/>
+          </ListItem>
+
+          <ListItem>
+              <ListItemAvatar>
+                <Avatar className={classes.avatar}>
+                  <PersonIcon />
+                </Avatar>
+              </ListItemAvatar>
+            <ListItemText primary={seenBy}/>
+          </ListItem>
+
+          <ListItem>
+              <ListItemAvatar>
+                <Avatar className={classes.avatar}>
+                  <EventIcon />
+                </Avatar>
+              </ListItemAvatar>
+            <ListItemText primary={events}/>
+          </ListItem>
+
+          <ListItem>
+          <ListItemAvatar>
+                <Avatar className={classes.avatar}>
+                  <CalendarIcon />
+                </Avatar>
+              </ListItemAvatar>
+            <ListItemText primary={dateWorn}/>
+          </ListItem>
         {/* {emails.map(email => (
           <ListItem button onClick={() => handleListItemClick(email)} key={email}>
             <ListItemAvatar>
