@@ -5,7 +5,7 @@ let express = require('express'),
     router = express.Router();
 
 
-const DIR = './public/';
+const DIR = './build/images';
 
 /// CODE NEEDED SPECIFICALLY FOR UPLOADING IMAGES
 const storage = multer.diskStorage({
