@@ -1,7 +1,9 @@
 import React from 'react';
 import 'bulma/css/bulma.css';
-import { AppBar, Toolbar, Typography, Button, IconButton, Grid, Paper, Tab, Tabs } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Button, IconButton, Grid, Paper, Tab, Tabs, withStyles } from "@material-ui/core";
 import Header from './components/Header.component';
+import Background from "../src/purpleFabric.jpg"
+import { makeStyles, useTheme, withTheme } from "@material-ui/core/styles";
 
 import {
   BrowserRouter as Router,
@@ -19,6 +21,22 @@ import "./App.css";
 import Login from './components/Login.component'
 
 // import user here
+
+const useStyles = makeStyles(theme => ({
+  "@global":{
+      body: {
+          backgroundImage: "url('/images/purpleFabric.jpg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+          height: "100%"
+      },
+      html: {
+        height: "100%"
+      }
+  }
+}))
 
 function App() {
   
@@ -40,4 +58,4 @@ function App() {
   );
 }
 
-export default App;
+export default withStyles(useStyles) (App);

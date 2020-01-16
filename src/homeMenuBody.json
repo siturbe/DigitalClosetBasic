@@ -1,6 +1,6 @@
 {
   "myCloset": {
-    "para": "View your closet and save outfit",
+    "para": "View your closet and save outfit details",
     "img": "./images/myCloset.jpg",
     "title": "Go to Closet",
     "link": "/closetPage"

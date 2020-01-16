@@ -134,33 +134,69 @@ export default function SimpleDialogDemo() {
 
     const getGarmentData = () => {
         let activeStep = localStorage.getItem("currentTop");
-        axios.get("http://localhost:4000/api/get-tops/" + currentUser).then(function (res) {
-          userTops = res;
-          let id = userTops.data[activeStep]._id;
-          console.log(id);
-          
-          axios.get("http://localhost:4000/api/getGarmentData/" + id).then(function (result){
-            console.log(result);
-            let peopleSeen = result.data[0].peopleSeen;
-            let dateWorn = result.data[0].dateWorn;
-            let events = result.data[0].events;
-            let label = result.data[0].brand + " " + result.data[0].color + " " + result.data[0].type;
-            garmentData = { peopleSeen, dateWorn, events, label };
-            let dateArray = [];
-            for(let i=0; i<garmentData.dateWorn.length; i++){
-              let dateobj = new Date(garmentData.dateWorn[i])
-              let dateWornShort = dateobj.toLocaleDateString('en-US');
-              dateArray.push(dateWornShort);
-            }
-            setLabel(garmentData.label);
-            setSeenBy("Seen by:  " + garmentData.peopleSeen);
-            setEvents("Worn to: " + garmentData.events);
-            setDateWorn("Worn on: " + dateArray);
+        let colorFilter = localStorage.getItem("colorFilter");
+        let colorVar = localStorage.getItem("colorVar");
+        console.log(colorFilter);
+        console.log(colorVar);
+
+        if(colorFilter == "true"){
+          axios.get("http://localhost:4000/api/get-tops/" + currentUser + "/" + colorVar).then(function (res) {
+            userTops = res;
+            let id = userTops.data[activeStep]._id;
+            console.log(id);
+            
+            axios.get("http://localhost:4000/api/getGarmentData/" + id).then(function (result){
+              console.log(result);
+              let peopleSeen = result.data[0].peopleSeen;
+              let dateWorn = result.data[0].dateWorn;
+              let events = result.data[0].events;
+              let label = result.data[0].brand + " " + result.data[0].color + " " + result.data[0].type;
+              garmentData = { peopleSeen, dateWorn, events, label };
+              let dateArray = [];
+              for(let i=0; i<garmentData.dateWorn.length; i++){
+                let dateobj = new Date(garmentData.dateWorn[i])
+                let dateWornShort = dateobj.toLocaleDateString('en-US');
+                dateArray.push(dateWornShort);
+              }
+              setLabel(garmentData.label);
+              setSeenBy("Seen by:  " + garmentData.peopleSeen);
+              setEvents("Worn to: " + garmentData.events);
+              setDateWorn("Worn on: " + dateArray);
+            })
+          }).catch(function (error){
+            console.log(error);
           })
-        }).catch(function (error){
-          console.log(error);
-        })
-        
+
+          } else {
+            axios.get("http://localhost:4000/api/get-tops/" + currentUser).then(function (res) {
+              userTops = res;
+              let id = userTops.data[activeStep]._id;
+              console.log(id);
+              
+              axios.get("http://localhost:4000/api/getGarmentData/" + id).then(function (result){
+                console.log(result);
+                let peopleSeen = result.data[0].peopleSeen;
+                let dateWorn = result.data[0].dateWorn;
+                let events = result.data[0].events;
+                let label = result.data[0].brand + " " + result.data[0].color + " " + result.data[0].type;
+                garmentData = { peopleSeen, dateWorn, events, label };
+                let dateArray = [];
+                for(let i=0; i<garmentData.dateWorn.length; i++){
+                  let dateobj = new Date(garmentData.dateWorn[i])
+                  let dateWornShort = dateobj.toLocaleDateString('en-US');
+                  dateArray.push(dateWornShort);
+                }
+                setLabel(garmentData.label);
+                setSeenBy("Seen by:  " + garmentData.peopleSeen);
+                setEvents("Worn to: " + garmentData.events);
+                setDateWorn("Worn on: " + dateArray);
+              })
+            }).catch(function (error){
+              console.log(error);
+            })
+
+
+          }
       }
     
     getGarmentData();

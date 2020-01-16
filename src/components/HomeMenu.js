@@ -87,24 +87,6 @@ export default function ControlledExpansionPanels() {
         </ExpansionPanelDetails>
       </ExpansionPanel>
  
-      
-      
-      {/* <ExpansionPanel expanded={expanded === 'panel3'} >
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
-        >
-          
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography className={classes.heading}><Link to="/auth">Account</Link></Typography>
-            <Typography className={classes.secondaryHeading}>
-              Login/Logout
-            </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel> */}
-      
     </div>
   );
 }

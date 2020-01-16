@@ -7,8 +7,8 @@ import HomeMenu from '../components/HomeMenu';
 function HomePage() {
 
   return (
-    <div className="container">
-       
+    <div 
+      className="container">
        <HomeMenu /> 
     </div>
 

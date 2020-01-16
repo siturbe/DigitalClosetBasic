@@ -54,7 +54,7 @@ export default class FilesUploadComponent extends Component {
             let imgSrc = res.data.itemCreated.profileImg;
 
             let dataToSend = {
-                color: this.state.color,
+                color: this.state.color.toLowerCase(),
                 picture: imgSrc,
                 type: this.state.type,
                 dateWorn: this.state.dateWorn,
