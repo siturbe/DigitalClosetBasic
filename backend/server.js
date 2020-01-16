@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 
-app.use('/public', express.static('public'));
+app.use('/build', express.static('build'));
 
 app.use('/api', api)
 
