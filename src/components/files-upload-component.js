@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Input, FormBtn, DropDown } from "../components/Form";
-import { Col, Row, Container } from "../components/Grid";
+import {Input } from "../components/Form";
+import { Container } from "../components/Grid";
 import SimpleSelect from "../components/TopOrBottomSelect";
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import PersonIcon from '@material-ui/icons/Person';
-import PictureIcon from '@material-ui/icons/Photo';
-import BrandIcon from '@material-ui/icons/BrandingWatermark';
-import ColorIcon from '@material-ui/icons/ColorLensRounded';
-import CalendarIcon from '@material-ui/icons/CalendarToday';
-import ShirtIcon from '@material-ui/icons/ShoppingBasket';
-import EventIcon from '@material-ui/icons/PartyMode';
+
 
 export default class FilesUploadComponent extends Component {
 

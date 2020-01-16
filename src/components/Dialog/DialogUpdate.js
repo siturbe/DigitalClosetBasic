@@ -4,9 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
-import Typography from '@material-ui/core/Typography';
 import { blue } from '@material-ui/core/colors';
 import UpdateInfo from '../AddDatePeople';
 

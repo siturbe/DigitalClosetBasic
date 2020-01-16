@@ -1,6 +1,4 @@
 import React from "react";
-import HomeBtn from "../components/HomeBtn";
-import EventListItem from "../components/EventListItem";
 import Partners from "../brands.json";
 import "../components/Brands.css"
 

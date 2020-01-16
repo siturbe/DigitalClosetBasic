@@ -1,9 +1,8 @@
 import React from 'react';
 import 'bulma/css/bulma.css';
-import { AppBar, Toolbar, Typography, Button, IconButton, Grid, Paper, Tab, Tabs, withStyles } from "@material-ui/core";
+import { Grid, withStyles } from "@material-ui/core";
 import Header from './components/Header.component';
-import Background from "../src/purpleFabric.jpg"
-import { makeStyles, useTheme, withTheme } from "@material-ui/core/styles";
+import { makeStyles, } from "@material-ui/core/styles";
 
 import {
   BrowserRouter as Router,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Input, FormBtn, DropDown } from "../components/Form";
-import { Col, Row, Container } from "../components/Grid";
+import {Input } from "../components/Form";
+import { Container } from "../components/Grid";
 
 let peopleVar = "";
 
