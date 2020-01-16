@@ -105,6 +105,17 @@ router.get("/get-tops/:currentUser", (req, res, next) => {
     });
 })
 
+//route to pull tops by user and color
+router.get("/get-tops/:currentUser/:color", (req, res, next) => {
+    Garment.find({
+        email: req.params.currentUser,
+        color: req.params.color,
+        topOrBottom: 'top'
+    }).then(data => {
+        res.status(200).json(data);
+    });
+})
+
 //route to pull bottoms of user
 router.get("/get-bottoms/:currentUser", (req, res, next) => {
     Garment.find({
