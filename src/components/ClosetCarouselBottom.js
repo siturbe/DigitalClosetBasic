@@ -81,7 +81,7 @@ export default function TextBottomStepper() {
   
 
   const pullBottoms = () => {
-    axios.get("http://localhost:4000/api/get-bottoms/" + currentUser).then(function (res) {
+    axios.get("/api/get-bottoms/" + currentUser).then(function (res) {
         userBottoms = res;
         console.log(userBottoms);
         tutorialSteps1 = [];

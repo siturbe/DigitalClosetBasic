@@ -92,7 +92,7 @@ export default function TextMobileStepper() {
   const pullTops = () => {
     let colorVar = colorSearch.toLowerCase();
     if(checked == false ){
-      axios.get("http://localhost:4000/api/get-tops/" + currentUser).then(function (res) {
+      axios.get("/api/get-tops/" + currentUser).then(function (res) {
           userTops = res;
           console.log(userTops);
           tutorialSteps1 = [];
@@ -119,7 +119,7 @@ export default function TextMobileStepper() {
       alert("Please enter a color, or uncheck the color filter")
     } else {
 
-      axios.get("http://localhost:4000/api/get-tops/" + currentUser + "/" + colorVar).then(function (res) {
+      axios.get("/api/get-tops/" + currentUser + "/" + colorVar).then(function (res) {
           userTops = res;
           console.log(userTops);
           tutorialSteps1 = [];

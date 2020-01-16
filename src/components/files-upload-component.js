@@ -48,7 +48,7 @@ export default class FilesUploadComponent extends Component {
         formData.append('profileImg', this.state.profileImg)
         
 
-        axios.post("http://localhost:4000/api/item-profile", formData, {
+        axios.post("/api/item-profile", formData, {
         }).then(res => {
             console.log(res);
             let imgSrc = res.data.itemCreated.profileImg;
@@ -67,7 +67,7 @@ export default class FilesUploadComponent extends Component {
 
             console.log(dataToSend);
 
-            axios.post("http://localhost:4000/api/save-garment", dataToSend, {
+            axios.post("/api/save-garment", dataToSend, {
             }).then(res => {
                 console.log(res); 
                 this.setState({

@@ -24,7 +24,7 @@ export default class AddDate extends Component {
         let id;
 
 
-        axios.get("http://localhost:4000/api/get-tops/" + currentUser).then(function (res) {
+        axios.get("/api/get-tops/" + currentUser).then(function (res) {
             id = res.data[currentTop]._id;
             console.log(id);
 
@@ -33,7 +33,7 @@ export default class AddDate extends Component {
             }
             
             
-            axios.post("http://localhost:4000/api/add-date/" + id, dataToSend, {
+            axios.post("/api/add-date/" + id, dataToSend, {
             }).then(res => {
                 console.log(res);
                 
